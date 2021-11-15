@@ -1,0 +1,20 @@
+{
+    "name": "everything-all-of-the-time/first-block",
+    "title": "First Block",
+    "description": "A custom block type.",
+    "attributes": {
+        "content": {
+            "type": "string",
+            "default": "Hi Roy"
+        }
+    },
+    "category": "widgets",
+    "apiVersion": 2,
+    "icon": "smiley",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:../../build/block-first-block.js",
+	"editorStyle": "file:../../build/block-first-block.css",
+	"style": "file:../../build/block-first-block.css"
+}
