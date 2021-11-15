@@ -32,5 +32,4 @@ jobs:
 
       # Run unit tests
       - name : Unit Tests
-        run: composer test
-  
+        run: composer test:unit
