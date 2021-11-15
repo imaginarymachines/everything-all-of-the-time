@@ -1,6 +1,7 @@
 {
-    "name": "mexstuffs/everything-all-of-the-time",
+    "name": "imaginary-machines/everything-all-of-the-time",
     "description": "Example of Plugin Machine generated plugin with many features on.",
+    "type": "wordpress-plugin",
     "require": {
         "php": "^7.2|^8.0"
     },
