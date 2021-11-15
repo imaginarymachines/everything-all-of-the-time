@@ -30,6 +30,7 @@ jobs:
       - name: Install Composer dependencies
         run: |
           composer install --no-dev
+          composer require yoast/phpunit-polyfills
           composer global require "phpunit/phpunit=6.1.0"
 
       - name: Install WordPress test suite
