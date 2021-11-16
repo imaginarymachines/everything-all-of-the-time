@@ -14,14 +14,14 @@
 ## Working With JavaScript
 
 - Build JS/CSS
-    - `yarn build`
+    - `npm run build`
 - Start JS/CSS for development
-    - `yarn start`
+    - `npm run start`
 - Test changed files
-    - `yarn test --watch`
+    - `npm run test --watch`
 - Test all files once
-    - `yarn test`
-    - `yarn test --ci`
+    - `npm run test`
+    - `npm run test --ci`
 
 
 ## Working With PHP

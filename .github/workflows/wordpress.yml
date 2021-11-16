@@ -37,8 +37,8 @@ jobs:
       # Build JavaScript to prevent errors.
       - name: Install and build JavaScript
         run: |
-          yarn
-          yarn build
+          npm install
+          npm run build
 
       ## Install WordPress Test Suite
       - name: Install WordPress test suite
