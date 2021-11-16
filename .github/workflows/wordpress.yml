@@ -27,15 +27,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
+      ## Setup composer
       - name: Install Composer dependencies
         run: |
           composer install --no-dev
           composer require yoast/phpunit-polyfills
           composer global require "phpunit/phpunit=6.1.0"
 
+      # Build JavaScript to prevent errors.
+      - name: Install and build JavaScript
+        run: |
+          yarn
+          yarn build
+
+      ## Install WordPress Test Suite
       - name: Install WordPress test suite
         run: bash bin/install-wp-tests.sh wordpress_test root root mysql ${{ matrix.wordpress-version }}
 
-
+      ## Run the tests
       - name: Tests
         run: $HOME/.composer/vendor/bin/phpunit --config=phpunit-integration.xml
