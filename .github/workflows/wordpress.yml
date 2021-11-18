@@ -16,6 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+        
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.2'
+          tools: phpunit, composer, phpunit-polyfills
 
       ## Setup composer
       - name: Install Composer dependencies
