@@ -11,26 +11,29 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        php-version: [ 7.2,7.3,7.4 ]
+        wordpress-version: [ latest ]
+    container:
+      image: junaidbhura/wp-tests:php-${{ matrix.php-version }}
+    services:
+      mysql:
+        image: mysql:5.7.27
+        env:
+          MYSQL_ROOT_PASSWORD: root
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Setup PHP with tools
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.2'
-          tools: phpunit, composer, phpunit-polyfills
-
-      ## Setup composer
       - name: Install Composer dependencies
         run: |
           composer install
 
-      ## Run the tests
+      - name: Install WordPress test suite
+        run: bash bin/install-wp-tests.sh wordpress_test root root mysql ${{ matrix.wordpress-version }}
+
+
       - name: Tests
-        run: |
-          docker-compose up -d
-          docker-compose run phpunit
-          composer test:wordpress
+        run: $HOME/.composer/vendor/bin/phpunit --config=phpunit-integration.xml
