@@ -22,6 +22,8 @@ jobs:
         image: mysql:5.7.27
         env:
           MYSQL_ROOT_PASSWORD: root
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
 
     steps:
       - name: Checkout repository
@@ -36,4 +38,4 @@ jobs:
 
 
       - name: Tests
-        run: $HOME/.composer/vendor/bin/phpunit --config=phpunit-integration.xml
+        run: composer test
