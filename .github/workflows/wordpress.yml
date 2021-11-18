@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [ 7.2, 7.3, 7.4 ]
+        php-version: [ 7.2,7.3,7.4 ]
         wordpress-version: [ latest ]
     container:
       image: junaidbhura/wp-tests:php-${{ matrix.php-version }}
@@ -22,6 +22,8 @@ jobs:
         image: mysql:5.7.27
         env:
           MYSQL_ROOT_PASSWORD: root
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
 
     steps:
       - name: Checkout repository
@@ -29,13 +31,11 @@ jobs:
 
       - name: Install Composer dependencies
         run: |
-          composer install --no-dev
-          composer require yoast/phpunit-polyfills
-          composer global require "phpunit/phpunit=6.1.0"
+          composer install
 
       - name: Install WordPress test suite
         run: bash bin/install-wp-tests.sh wordpress_test root root mysql ${{ matrix.wordpress-version }}
 
 
       - name: Tests
-        run: $HOME/.composer/vendor/bin/phpunit --config=phpunit-integration.xml
+        run: composer test

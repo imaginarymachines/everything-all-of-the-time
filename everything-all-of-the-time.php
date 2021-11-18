@@ -1,5 +1,5 @@
 <?php
-                
+
 
 /**
 * Plugin Name: Everything All Of The Time
@@ -21,7 +21,7 @@
 */
 add_action('plugins_loaded', function () {
     if (file_exists(__DIR__ . '/vendor/autoload.php')) {
-        include __DIR__ . '/vendor/autoload.php';
+        include_once __DIR__ . '/vendor/autoload.php';
     }
 });
 

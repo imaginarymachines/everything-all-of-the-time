@@ -3,15 +3,18 @@
 //Register assets for PHP Page
 add_action('init', function () {
     $handle = 'everything-all-of-the-time-2';
-    $assets = include dirname(__FILE__, 3). "/build/admin-page-$handle.asset.php";
-    $dependencies = $assets['dependencies'];
-    $dependencies[] = 'jquery';
-    wp_register_script(
-        $handle,
-        plugins_url("/build/admin-page-$handle.js", dirname(__FILE__, 2)),
-        $dependencies,
-        $assets['version']
-    );
+    if( file_exists(dirname(__FILE__, 3). "/build/admin-page-$handle.asset.php")){
+        $assets = include dirname(__FILE__, 3). "/build/admin-page-$handle.asset.php";
+        $dependencies = $assets['dependencies'];
+        $dependencies[] = 'jquery';
+        wp_register_script(
+            $handle,
+            plugins_url("/build/admin-page-$handle.js", dirname(__FILE__, 2)),
+            $dependencies,
+            $assets['version']
+        );
+    }
+
 });
 
 //Enqueue assets for PHP Page on admin page only
