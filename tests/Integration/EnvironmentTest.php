@@ -1,5 +1,5 @@
 <?php
-namespace AllOfTheThings\Tests\Integration;
+namespace EveryThing\Tests\Integration;
 
 use PHPUnit\Framework\TestCase;
 

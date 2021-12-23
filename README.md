@@ -5,23 +5,11 @@
 ## Installation
 
 - Git clone:
-    - `git clone git@github.com:imaginarymachines/everything-all-of-the-time.git`
+    - `git clone git@github.com:mexstuffs/everything-all-of-the-time.git`
 - Install javascript dependencies
     - `yarn`
 - Install php dependencies
     - `composer install`
-
-## Working With JavaScript
-
-- Build JS/CSS
-    - `npm run build`
-- Start JS/CSS for development
-    - `npm run start`
-- Test changed files
-    - `npm run test --watch`
-- Test all files once
-    - `npm run test`
-    - `npm run test --ci`
 
 
 ## Working With PHP
@@ -30,7 +18,7 @@
 
 PHP classes should be located in the "php" directory and follow the [PSR-4 standard](https://www.php-fig.org/psr/psr-4/).
 
-The root namespace is PHP_NAMESPACE.
+The root namespace is `EverythingAllOfTheTime`.
 
 
 
@@ -59,7 +47,7 @@ A [docker-compose](https://docs.docker.com/samples/wordpress/)-based local devel
 - Start server
     - `docker-compose up -d`
 - Acess Site
-    - [http://localhost:6100](http://localhost:6100)
+    - [http://localhost:6015](http://localhost:6015)
 - Run WP CLI command:
     - `docker-compose run wpcli wp user create admin admin@example.com --role=admin user_pass=pass`
 
@@ -72,3 +60,4 @@ There is a special phpunit container for running WordPress tests, with WordPress
     - `composer install`
 - Test
     - `composer test:wordpress`
+

@@ -1,18 +1,18 @@
 {
-    "name": "imaginary-machines/everything-all-of-the-time",
-    "description": "Example of Plugin Machine generated plugin with many features on.",
-    "type": "wordpress-plugin",
+    "name": "mexstuffs/everything-all-of-the-time",
+    "description": "everything",
     "require": {
         "php": "^7.2|^8.0"
     },
+    "type": "wordpress-plugin",
     "autoload": {
         "psr-4": {
-            "AllOfTheThings\\": "./php"
+            "EveryThing\\": "./php"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AllOfTheThings\\Tests\\": "./tests"
+            "EveryThing\\Tests\\": "./tests"
         }
     },
     "require-dev": {

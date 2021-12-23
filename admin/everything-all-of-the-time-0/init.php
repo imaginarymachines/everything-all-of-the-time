@@ -1,7 +1,7 @@
 <?php
-//Register assets for adminPage 2
+//Register assets for adminPage 0
 add_action('init', function () {
-    $handle = 'everything-all-of-the-time-2';
+    $handle = 'everything-all-of-the-time-0';
     if( file_exists(dirname(__FILE__, 3). "/build/admin-page-$handle.asset.php" ) ){
         $assets = include dirname(__FILE__, 3). "/build/admin-page-$handle.asset.php";
         $dependencies = $assets['dependencies'];
@@ -14,24 +14,24 @@ add_action('init', function () {
     }
 });
 
-//Enqueue assets for adminPage 2 on admin page only
+//Enqueue assets for adminPage 0 on admin page only
 add_action('admin_enqueue_scripts', function ($hook) {
-    if ('toplevel_page_everything-all-of-the-time-2' != $hook) {
+    if ('toplevel_page_everything-all-of-the-time-0' != $hook) {
         return;
     }
-    wp_enqueue_script('everything-all-of-the-time-2');
+    wp_enqueue_script('everything-all-of-the-time-0');
 });
 
-//Register adminPage 2 menu page
+//Register adminPage 0 menu page
 add_action('admin_menu', function () {
     add_menu_page(
-        __('adminPage 2', 'everything-all-of-the-time'),
-        __('adminPage 2', 'everything-all-of-the-time'),
+        __('adminPage 0', 'everything-all-of-the-time'),
+        __('adminPage 0', 'everything-all-of-the-time'),
         'manage_options',
-        'everything-all-of-the-time-2',
+        'everything-all-of-the-time-0',
         function () {
             //React root
-            echo '<div id="everything-all-of-the-time-2"></div>';
+            echo '<div id="everything-all-of-the-time-0"></div>';
         }
     );
 });

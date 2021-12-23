@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AllOfTheThings\Tests\Unit;
+namespace EveryThing\Tests\Unit;
 
 use Yoast\PHPUnitPolyfills\Polyfills\AssertIsType;
 

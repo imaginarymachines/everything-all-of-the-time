@@ -17,18 +17,23 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
       # Install composer with cache
-      ## See https://github.com/marketplace/actions/setup-php-action#cache-composer-dependencies
-      - name: Get composer cache directory
-        id: composercache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-      - name: Cache dependencies
+      - name: Get Composer Cache Directory
+        id: get-composer-cache-dir # Instead of composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache Composer packages
+        id: composer-cache
         uses: actions/cache@v2
         with:
-          path: ${{ steps.composercache.outputs.dir }}
-          key: php-${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
       - name: Install dependencies
-        run: composer install --prefer-dist
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install --prefer-dist --no-progress
 
       # Run unit tests
       - name : Unit Tests

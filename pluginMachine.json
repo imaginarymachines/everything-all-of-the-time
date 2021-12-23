@@ -1,4 +1,21 @@
 {
+    "slug": "everything-all-of-the-time",
     "pluginId": 12,
-    "buildId": 12
+    "buildId": 12,
+    "entryPoints": {
+        "adminPages": [],
+        "blocks": []
+    },
+    "buildIncludes": [
+        "everything-all-of-the-time.php",
+        "readme.txt",
+        "php",
+        "vendor",
+        "build",
+        "blocks/everything-all-of-the-time-0/init.php",
+        "blocks/everything-all-of-the-time-1/init.php",
+        "admin/everything-all-of-the-time-0/init.php",
+        "admin/everything-all-of-the-time-1/init.php",
+        "admin/everything-all-of-the-time-2/init.php"
+    ]
 }

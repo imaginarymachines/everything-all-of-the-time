@@ -1,8 +1,8 @@
 <?php
 
 
-namespace AllOfTheThings\Tests\Unit;
-use AllOfTheThings\Plugin;
+namespace EveryThing\Tests\Unit;
+use EveryThing\Plugin;
 use Brain\Monkey\Functions;
 
 /**

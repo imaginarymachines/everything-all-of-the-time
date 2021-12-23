@@ -1,0 +1,20 @@
+{
+    "name": "everything-all-of-the-time/everything-all-of-the-time-1",
+    "title": "block 1",
+    "description": "",
+    "attributes": {
+        "content": {
+            "type": "string",
+            "default": "Hi Roy"
+        }
+    },
+    "category": "widgets",
+    "apiVersion": 2,
+    "icon": "smiley",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:../../build/block-everything-all-of-the-time-1.js",
+	"editorStyle": "file:../../build/block-everything-all-of-the-time-1.css",
+	"style": "file:../../build/block-everything-all-of-the-time-1.css"
+}

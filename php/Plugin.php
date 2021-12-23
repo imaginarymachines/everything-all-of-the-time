@@ -1,6 +1,6 @@
 <?php
 
-namespace AllOfTheThings;
+namespace EveryThing;
 
 class Plugin
 {
