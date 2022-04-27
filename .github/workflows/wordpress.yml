@@ -24,7 +24,7 @@ jobs:
         wp-version: [ "latest", "5.8", ]
         # Allow all tests to run, even if one fails
         ## https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast
-        fail-fast: false
+      fail-fast: false
 
     steps:
 
